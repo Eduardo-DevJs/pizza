@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { formatCurrencyBRL } from "../utils/formatCurrency";
 
 interface ModalProps {
