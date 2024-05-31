@@ -5,6 +5,7 @@ import { pizzaJson } from "./data/pizzas";
 import { useState } from "react";
 import { PizzaProps } from "./types/pizza";
 import Modal from "./modal";
+import { FaCartArrowDown } from "react-icons/fa";
 
 export default function App() {
   const [selectedPizza, setSelectedPizza] = useState<PizzaProps | null>(null);
@@ -17,7 +18,16 @@ export default function App() {
     <div>
       <Header />
       <Container>
-        <h1 className="mb-10 font-bold text-4xl text-zinc-600">Pizzas</h1>
+        <header className="mb-10 flex items-center justify-between">
+          <h1 className=" font-bold text-4xl text-zinc-600">Pizzas</h1>
+
+          <div className="relative">
+            <FaCartArrowDown size={30} />
+            <div className="bg-orange-500 absolute -top-3 -right-3 text-white w-6 h-6 flex items-center justify-center p-1 rounded-full">
+              1
+            </div>
+          </div>
+        </header>
 
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {pizzaJson.map((pizza) => (
